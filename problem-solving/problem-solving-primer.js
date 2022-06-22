@@ -44,8 +44,8 @@
 // sum([10, 15, 30, 5]);
 
 // ============================================
-// // you have been provided an array of number
 // // Finding out max or min numbers
+// // you have been provided an array of number
 
 // function min(arr) {
 //     // flag variable
@@ -121,17 +121,17 @@
 //         reverseInt(13) = 31
 //         reverseInt(-90) = -09
 
-function reverseInt(num) {
-    // change to string and then reverse it
-    let reverseNumber = num.toString().split('').reverse().join('')
+// function reverseInt(num) {
+//     // change to string and then reverse it
+//     let reverseNumber = num.toString().split('').reverse().join('')
     
-    // validate the result
-    if (reverseNumber.endsWith('-')) {
-        reverseNumber = '-' + reverseNumber.slice(0, reverseNumber.length -1)
-    }
+//     // validate the result
+//     if (reverseNumber.endsWith('-')) {
+//         reverseNumber = '-' + reverseNumber.slice(0, reverseNumber.length -1)
+//     }
     
-    // console.log(Number(reverseNumber))
-    // return reverseNumber
-}
+//     // console.log(Number(reverseNumber))
+//     // return reverseNumber
+// }
 
-reverseInt(-90);
+// reverseInt(-90);
