@@ -59,7 +59,7 @@
 //     for (let elm of arr2) {
 //         hashTable2[elm] = (hashTable2[elm] || 0) + 1
 //     }
-    
+
 //     for(let elm in hashTable1) {
 //         if(!elm in hashTable1 || hashTable1[elm] !== hashTable2[elm]) {
 //             return false;
@@ -75,7 +75,7 @@
 // Two sum
 // function twoSum(arr, target) {
 //     const hashT = {}; // 5
-    
+
 //     for(let i = 0; i < arr.length; i++) {
 //         const want =  target -  arr[i]  // 7 - 2 = 5 // want = 5
 //         if(want in hashT) {
@@ -84,7 +84,7 @@
 //         }
 //         hashT[arr[i]] = i;
 //     }
-    
+
 // }
 
 // console.log(twoSum([2,5,6, 9], 7))
@@ -102,6 +102,8 @@
 //         sum += nums[i]
 //         if([sum - k] in hashTable) {
 //             result += hashTable[sum - k]
+//             console.log('sum - k', sum - k)
+//             console.log(hashTable[sum - k])
 //         }
 //         hashTable[sum] = (hashTable[sum] || 0) + 1
 //     }
@@ -109,3 +111,73 @@
 // }; 
 
 // console.log(subarraySum([1, 1, 1], 2))
+
+// // ========================================================
+// Anagram
+// const isAnagram = function (s, t) {
+//     const regEx = /[^\w]/
+//     // Normalize both the input
+//     const normalizeS = s.replace(regEx, '').toLowerCase()
+//     const normalizeT = t.replace(regEx, '').toLowerCase()
+
+//     const hashTable1 = {}
+//     const hashTable2 = {}
+
+//     // Loop through two string 
+//     for (let elm of normalizeS) {
+//         // insert elms inside hashTable1
+//         hashTable1[elm] = (hashTable1[elm] || 0) + 1;
+//     }
+//     for (let elm of normalizeT) {
+//         // insert elms inside hashTable2
+//         hashTable2[elm] = (hashTable2[elm] || 0) + 1;
+//     }
+//     // check if the letter are found 
+//     if (Object.keys(hashTable1).length !== Object.keys(hashTable2).length)
+//         return false;
+//     for (let elm in hashTable1) {
+//         if (!elm in hashTable2 || hashTable1[elm] !== hashTable2[elm]) {
+//             return false;
+//         }
+//     }
+//     return true
+// };
+
+// console.log(isAnagram("Anag ram", "Na garam"))
+
+// // ===========================================================================
+// First unique character in a string, if not found then return - 1
+
+// function firstUnique(str) {
+    // const hashMap = {};
+    // for(let elm of str) {
+    //     hashMap[elm] = (hashMap[elm] || 0) + 1;
+    // }
+
+    // for(let i = 0; i < str.length; i++) {
+    //     if(hashMap[str[i]] === 1) {
+    //         return i;
+    //     }
+    // }
+    // return -1;
+// }
+// firstUnique('leetcode')
+
+// // ================================================================
+// Group Anagram
+// const groupAnagrams = function(strs) {
+//     const hashTable = {};
+
+//     for(let elm of strs) {
+//         const sorted = elm.split('').sort().join('');
+//         if(hashTable[sorted]) {
+//             hashTable[sorted].push(elm)
+//         } else {
+//             hashTable[sorted] = [elm]
+//         }
+//     }
+//     return Object.values(hashTable);
+// }
+
+
+// groupAnagrams(["eat","tea","tan","ate","nat","bat"]);
