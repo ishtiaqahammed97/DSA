@@ -75,7 +75,7 @@
 //     for (let i = 0; i <= haystack.length - needle.length; i++) {
 //         let j = 0;
 //         for (; j < needle.length; j++) {
-//             if (haystack[i + j] !== needle[j]) break
+//             if (haystack[i + j] !== needle[j]) break;
 //         }
 //         if (j === needle.length) return i
 //     }
@@ -83,13 +83,37 @@
 // };
 
 // console.log(strStr('hello', 'll'))
+// ==================================================================
 
-
-
-/** 
+/**
  i
  hello
  ll
- j 
+ j
 
  */
+
+// ===================================================================
+//  Sqrt(x)
+//  1 2 3 4
+// const mySqrt = function (x) {
+//     let left = 1;
+//     let right = x / 2; // 2
+
+//     while (left <= right) {
+//         let mid = Math.floor((left + right) / 2);  // mid = 1
+//         console.log(mid)
+//         if (mid > x / mid) {
+//             right = mid - 1; // 0
+//             continue
+//         }
+//         if ((mid + 1) <= x / (mid + 1)) { // 2 <= 2
+//             left = mid + 1;
+//             continue
+//         }
+//         return mid
+//     }
+//     return x
+// };
+
+// console.log(mySqrt(4))
